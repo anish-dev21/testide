@@ -1,19 +1,5 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>IntelliJ Platform Plugin Template</name>
-    <vendor>JetBrains</vendor>
-
-    <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="Code Suggestions" factoryClass="com.example.plugin.MyToolWindowFactory" anchor="right"/>
-    </extensions>
-
-
-    <applicationListeners>
-        <listener class="org.jetbrains.plugins.template.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
-</idea-plugin>
+<actions>
+    <action id="FloatingSuggestionAction" class="com.example.plugin.FloatingSuggestionAction" text="Show Code Suggestion">
+        <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+</actions>
